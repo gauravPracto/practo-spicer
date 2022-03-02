@@ -1,0 +1,25 @@
+#navBar{
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 1px 0px grey;
+    box-sizing: border-box;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+}
+
+#navImage{
+    height: auto;
+    width: 200px;
+    object-fit: contain;
+}
+
+#shoppingCart{
+    margin-top: 25px;
+    margin-right: 10px;
+    display: block;
+    width: 30px;
+    height: 30px;
+}

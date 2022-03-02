@@ -1,0 +1,14 @@
+body{
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+#root{
+    display: flex;
+    height:auto;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    
+    box-sizing: border-box;
+}

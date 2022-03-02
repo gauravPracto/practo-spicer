@@ -1,10 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import Trying from './components/Trying';
+import Root from './components/Root';
+import Payment from './components/Payment';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <><Trying></Trying></>
+    <Routes>
+      <Route exact path="/" element={<Root/>} />
+          <Route path="/payment" element={<Payment/>} />
+         
+    </Routes>
+
   );
 }
 

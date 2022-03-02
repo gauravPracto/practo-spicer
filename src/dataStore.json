@@ -1,9 +1,9 @@
 [{
-    "id":1,"name":"foodOne","price":"one"
+    "id":1,"name":"foodOne","price":"one","qty":0
 },{
-    "id":2,"name":"foodTwo","price":"two"
+    "id":2,"name":"foodTwo","price":"two","qty":0
 },{
-    "id":3,"name":"foodThree","price":"three"
+    "id":3,"name":"foodThree","price":"three","qty":0
 },{
-    "id":4,"name":"foodFour","price":"four"
+    "id":4,"name":"foodFour","price":"four","qty":0
 }]
