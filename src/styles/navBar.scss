@@ -12,7 +12,7 @@
 
 #navImage{
     height: auto;
-    width: 200px;
+    width: 300px;
     object-fit: contain;
 }
 
@@ -22,4 +22,10 @@
     display: block;
     width: 30px;
     height: 30px;
+}
+
+@media (max-width:400px) {
+    #navImage{
+        width: 200px;
+    }
 }

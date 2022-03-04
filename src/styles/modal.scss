@@ -1,0 +1,56 @@
+#modalButton{
+    background-color:#f4bd2a;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+
+#modalDiv{
+    box-sizing: border-box;
+    width: 300px;
+    height: 400px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardInnerDiv{
+    height: 12%;
+    // border: 1px black solid;
+    width: 100%;
+}
+
+.cardInput{
+    height:40px;
+    margin-bottom: 10px;
+}
+
+#modalClose{
+    position: relative;
+    left:250px;
+    bottom:400px;
+    background-color: #D2042D;
+    border: none;
+    color: white;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#modalSubmit{
+    height: 50px;
+    width: 100%;
+    font-size: larger;
+    background-color: #f4bd2a;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+span{
+    color: #f4bd2a;
+    font-size: larger;
+    font-weight: bold;
+}

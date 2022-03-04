@@ -1,9 +1,9 @@
 [{
-    "id":1,"name":"foodOne","price":"one","qty":0
+    "id":1,"name":"foodOne","price":"10","qty":0,"veg":true
 },{
-    "id":2,"name":"foodTwo","price":"two","qty":0
+    "id":2,"name":"foodTwo","price":"12","qty":0,"veg":false
 },{
-    "id":3,"name":"foodThree","price":"three","qty":0
+    "id":3,"name":"foodThree","price":"34","qty":0,"veg":true
 },{
-    "id":4,"name":"foodFour","price":"four","qty":0
+    "id":4,"name":"foodFour","price":"12","qty":0,"veg":false
 }]
