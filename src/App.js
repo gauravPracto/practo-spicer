@@ -10,6 +10,7 @@ import FinalMessage from './components/FinalMessage';
 
 function App() {
   return (
+
     <Routes>
       <Route exact path="/" element={<Root/>} />
           <Route path="/payment" element={<Payment/>} />

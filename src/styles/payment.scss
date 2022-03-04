@@ -1,14 +1,16 @@
-html{
-    min-width: 400px;
-}
+html, body { margin: 0; padding: 0;
+overflow-x: hidden;}
+
 #payment{
     margin-top: 40px;
     width: 100%;
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
 }
 
 #left-payment{
+    margin-bottom: 100px;
     background-color:  #ffffff;
     min-width: 300px;
     width: 40%;
@@ -79,36 +81,53 @@ html{
     border-radius: 5px;
 }
 
-@media (max-width:860px) {
-    #left-payment{
-        width: 60%;
-    }
-    #payment{
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-    .special{
-        height: 100px;
-    }
-    #left-payment{
-        margin-bottom: 100px;
-    }
-    #coupon{
-        flex-direction: column;
-    }
-    
-}
-
-
-@media (max-width:630px){
-    #left-payment{
-        width: 80%;
-    }
-}
-
-@media (max-width:450px){
+@media (max-width:860px){
     #left-payment{
         width: 100%;
     }
+    .go{
+        display: none;
+    }
+    .onGo{
+        width: 40%;
+    }
 }
+// @media (max-width:860px) {
+//     #left-payment{
+//         width: 60%;
+//     }
+//     #payment{
+//         flex-direction: column;
+//         align-items: center;
+//         height: auto;
+//     }
+//     .special{
+//         height: 100px;
+//     }
+//     #left-payment{
+//         margin-bottom: 100px;
+//     }
+//     #coupon{
+//         flex-direction: column;
+//     }
+    
+// }
+
+
+// @media (max-width:630px){
+//     #left-payment{
+//         width: 80%;
+//     }
+// }
+
+// @media (max-width:450px){
+//     #left-payment{
+//         width: 100%;
+//     }
+//     .go{
+//         display: none;
+//     }
+//     .onGo{
+//         width: 40%;
+//     }
+// }
