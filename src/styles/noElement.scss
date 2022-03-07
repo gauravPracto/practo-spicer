@@ -1,0 +1,29 @@
+#noElement{
+    display: flex;
+    padding: 10px;
+    width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 5%;
+}
+
+#noElement-left{
+    font-size: 3vw;
+    width: 60%;
+    text-align: center;
+}
+
+#noElement-right{
+    text-align: center;
+    width: 40%;
+}
+
+
+#noELement-button{
+    min-width: 3vw;
+    font-size: 1rem;
+    background-color: aliceblue;
+    min-height: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}

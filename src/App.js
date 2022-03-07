@@ -15,7 +15,8 @@ function App() {
       <Route exact path="/" element={<Root/>} />
           <Route path="/payment" element={<Payment/>} />
           <Route path="/card" element={<PaymentForm/>} />
-          <Route path="/success" element={<FinalMessage/>} />
+          <Route path="/success" element={<FinalMessage tag="true"/>} />
+          <Route path="/unsuccessfull" element={<FinalMessage tag="false"/>} />
     </Routes>
 
   );

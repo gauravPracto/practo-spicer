@@ -4,8 +4,18 @@ import "../styles/payment.scss"
 import {useState} from 'react'
 import {addItem,reduceItem} from "../store/spicer"
 import ModalCard from './CreditCard'
+import NoElement from './NoElement'
 const Payment = () => {
-    const [isOpen, setIsOpen] = React.useState(false)
+    const countNonZero = (store)=>{
+        let count = 0
+        store.map((ele)=>{
+            if(ele.qty!=0){
+                count++
+            }
+        })
+        return count
+    }
+    const [isOpen, setIsOpen] = useState(false)
     const [alertMessage , setAlertMessage] = useState("")
     const [discount,setDiscount] = useState("none")
     const dispatch = useDispatch()
@@ -46,7 +56,7 @@ const Payment = () => {
         else
             return answer
     }
-  return (
+    return countNonZero(store)==0?<NoElement></NoElement>:(
     <div id="payment">
         <div id="left-payment">
             {console.log(store)}
