@@ -6,24 +6,20 @@
   const ModalCard = ({setIsOpen,isOpen}) => {
     const [cardDetails,setCardDetails] = useState({})
   const isFutureDate = (idate)=>{
-    console.log('hjj')
+    var check = false
       let yourDate = new Date()
       yourDate = yourDate.toISOString().split('T')[0]
       yourDate = yourDate.split('-')
       idate = idate.split('-')
-      let check=true
-      yourDate.map((ele,index)=>{
-        if(Number(yourDate[index])<=Number(idate[index])&&check){
-          check &&=true
+      for(let i=0;i<yourDate.length;i++){
+        if(Number(yourDate[i])<Number(idate[i])){
+          return true
         }
-        else{
-          check &&=false
+        else if(Number(yourDate[i])>Number(idate[i])){
+          return false
         }
-        console.log(check)
-
-      })
-      console.log(check)
-      return check
+      }
+      return false
   }
   let navigate = useNavigate();
     const validation = ()=>{
