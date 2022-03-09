@@ -11,8 +11,9 @@
 }
 
 #navImage{
+    float: left;
     height: auto;
-    width: 300px;
+    width: 50%;
     object-fit: contain;
 }
 
@@ -24,8 +25,8 @@
     height: 30px;
 }
 
-@media (max-width:400px) {
-    #navImage{
-        width: 200px;
-    }
-}
+// @media (max-width:400px) {
+//     #navImage{
+//         width: 200px;
+//     }
+// }

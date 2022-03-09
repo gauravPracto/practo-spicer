@@ -6,7 +6,7 @@ import CardContainer from './CardContainer'
 const Root = () => {
   const selectedItems = useSelector((element)=>element.selectedItems)
   return (
-    <div id="root">
+    <div id="outsideRoot">
       <NavBar></NavBar>
       <Banner></Banner>
       <CardContainer></CardContainer>

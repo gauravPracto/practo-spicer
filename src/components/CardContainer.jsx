@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import {fetchAll} from "../store/actions";
 import "../styles/cardContainer.scss"
 import Card from './Card'
+import NewLook from './NewLook';
 const CardContainer = () => {
     const store = useSelector((element)=>element.allItem)
     const dispatch = useDispatch();
