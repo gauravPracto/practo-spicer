@@ -69,7 +69,7 @@ const Payment = () => {
             {store.map((ele,index)=>{
                return ele.qty!=0?<div className='left'>
                <div className="box go">{index}</div>
-               <div className="box">{ele.name}</div>
+               <div className="box">{ele.menuname}</div>
                <div className="box">{ele.price}</div>
                <div className="box onGo "><button onClick={()=>{dispatch(reduceItem({
         id:ele.id

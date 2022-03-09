@@ -11,11 +11,11 @@ const FinalMessage = (props) => {
     <div id="finalMessage">
       <div id="success">SUCCESS</div>
       <div id="uniId">Order Id : {uniqid()}</div>
-      {store.map(ele=>ele.qty!=0?<div>{ele.name}</div>:null)}</div>
+      {store.map(ele=>ele.qty!=0?<div>{ele.menuname}</div>:null)}</div>
   ):<div id="finalMessage">
   <div id="success">UnSuccessfull</div>
   <div id="uniId">Order Id : {uniqid()}</div>
-  {store.map(ele=>ele.qty!=0?<div>{ele.name}</div>:null)}
+  {store.map(ele=>ele.qty!=0?<div>{ele.menuname}</div>:null)}
   <Link to="/payment"><button>no Worry Back to payment Again</button></Link>
   </div>
 }

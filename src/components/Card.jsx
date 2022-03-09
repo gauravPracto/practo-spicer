@@ -6,9 +6,11 @@ const Card = (props) => {
     const dispatch = useDispatch()
   return (
     <div className="card">
-    <img src="https://source.unsplash.com/random/300x300/?fruit" alt="Avatar" style={{"width":"100%"}}></img>
+        {console.log(props.all)}
+    <img src={props.all.images[0]} alt="Avatar" style={{"width":"100%"}}></img>
     <div className="container">
-      <h4><b>{props.all.name}</b></h4> 
+      <h4><b>{props.all.menuname}</b></h4> 
+      <h4><b>{props.all.price}</b></h4> 
       <div id="card-footer">
       <button onClick={()=>{dispatch(reduceItem({
         id:props.all.id
