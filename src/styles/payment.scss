@@ -16,6 +16,7 @@ html, body { margin: 0; padding: 0;}
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: auto;
 }
 
 #right-payment{
@@ -40,6 +41,10 @@ html, body { margin: 0; padding: 0;}
     border-bottom: 1px solid black;
     text-align: center;
     line-height: 50px;
+}
+
+.corrected-height{
+    height: 150px;
 }
 
 #coupon{

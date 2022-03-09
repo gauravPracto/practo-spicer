@@ -60,18 +60,18 @@ const Payment = () => {
     <div id="payment">
         <div id="left-payment">
             {console.log(store)}
-            <div className='left'>
-                <div className="box go">S.No</div>
-                <div className="box">Name</div>
-                <div className="box">Price</div>
-                <div className="box onGo">Qty</div>
+            <div className='left corrected-height'>
+                <div className="box go corrected-height">S.No</div>
+                <div className="box corrected-height">Name</div>
+                <div className="box corrected-height">Price</div>
+                <div className="box onGo corrected-height">Qty</div>
             </div>
             {store.map((ele,index)=>{
-               return ele.qty!=0?<div className='left'>
-               <div className="box go">{index}</div>
-               <div className="box">{ele.menuname}</div>
-               <div className="box">{ele.price}</div>
-               <div className="box onGo "><button onClick={()=>{dispatch(reduceItem({
+               return ele.qty!=0?<div className='left corrected-height'>
+               <div className="box go corrected-height">{index}</div>
+               <div className="box corrected-height">{ele.menuname}</div>
+               <div className="box corrected-height">{ele.price}</div>
+               <div className="box onGo corrected-height "><button onClick={()=>{dispatch(reduceItem({
         id:ele.id
     }))}}>
                 -
