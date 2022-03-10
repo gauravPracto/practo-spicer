@@ -68,8 +68,8 @@ const Payment = () => {
             </div>
             {store.map((ele,index)=>{
                return ele.qty!=0?<div className='left corrected-height'>
-               <div className="box go corrected-height">{index}</div>
-               <div className="box corrected-height">{ele.menuname}</div>
+               <div className="box go corrected-height">{index+1}</div>
+               <div className="box corrected-height">{ele.veg==true?<span style={{"color":"green"}}>{ele.menuname}</span>:<span style={{"color":"red"}}>{ele.menuname}</span>}</div>
                <div className="box corrected-height">{ele.price}</div>
                <div className="box onGo corrected-height "><button onClick={()=>{dispatch(reduceItem({
         id:ele.id
@@ -118,4 +118,3 @@ const Payment = () => {
 }
 
 export default Payment
-// {store.map(ele=>{return ele.qty>0?<p>{ele.name},{ele.qty}</p>:null})}
