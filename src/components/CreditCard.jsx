@@ -91,18 +91,20 @@
         >
           <div id="modalDiv">
               <span>CARD INFORMATION</span>
+              <br></br>
+              <div className="cardInnerDiv">Card Holder Name</div>
               <div className="cardInnerDiv"><input className="cardInput" type="text" name="cardName" id="cardName" /></div>
               <span className="alertSpan" id="cardNameAlert"></span>
-              <div className="cardInnerDiv">Card Holder Name</div>
+              <div className="cardInnerDiv">Card Holder Number</div>
               <div className="cardInnerDiv"><input type="number" className="cardInput" name="cardNumber" id="cardNumber" /></div>
               <span className="alertSpan" id="cardNumberAlert"></span>
-              <div className="cardInnerDiv">Card Holder Number</div>
+              <div className="cardInnerDiv">Expiry Date</div>
               <div className="cardInnerDiv"><input className="cardInput" type="date" name="cardDate" id="cardDate" /></div>
               <span className="alertSpan" id="cardDateAlert"></span>
-              <div className="cardInnerDiv">Expiry Date</div>
+              <div className="cardInnerDiv">CVV</div>
               <div className="cardInnerDiv"><input type="number" className="cardInput"name="cardCvv" id="cardCvv" /></div>
               <span className="alertSpan" id="cardCvvAlert"></span>
-              <div className="cardInnerDiv">CVV</div>
+              
           </div>
           <button id="modalClose"
             onClick={() => {

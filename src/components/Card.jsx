@@ -1,26 +1,43 @@
 import React from 'react'
-import {useDispatch } from 'react-redux'
-import {addItem,reduceItem} from "../store/spicer"
 import "../styles/card.scss"
+import { actions } from '../store/actionCreator'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state,currentProps)=>{
+  return {selectedItems:state.selectedItems}
+}
+const mapDispatchToProps = (dispatch,currentProps)=>{
+  return {
+    increment:(id)=>{dispatch(actions("inc",{id:id}))},
+    decrement:(id)=>{dispatch(actions("desc",{id:id}))}
+  }
+}
 const Card = (props) => {
-    const dispatch = useDispatch()
+  const buttonClick = (op,id)=>{
+    console.log(op,id)
+    switch(op){
+      case "+":
+        props.increment(id)
+        break
+      case "-":
+        props.decrement(id)
+        break
+      }
+  }
+
   return (
     <div className="card">
-        {console.log(props.all)}
-    <img src={props.all.images[0]} alt="Avatar" style={{"width":"100%"}}></img>
+    <img src={props.all.images[props.all.id%3]} alt="Avatar" style={{"width":"100%"}}></img>
     <div className="container">
       <h4><b>{props.all.veg==true?<span style={{"color":"green"}}>{props.all.menuname}</span>:<span style={{"color":"red"}}>{props.all.menuname}</span>}</b></h4> 
       <h4><b>{props.all.price}</b></h4> 
       <div id="card-footer">
-      <button onClick={()=>{dispatch(reduceItem({
-        id:props.all.id
-    }))}}>
+      <button onClick={()=>{buttonClick("-",props.all.id)}}>
                 -
             </button>
-            {props.qty}
-            <button onClick={()=>{dispatch(addItem({
-        id:props.all.id
-    }))}}>
+            {/* {console.log(props.selectedItems)} */}
+            {props.selectedItems[props.all.id]==undefined?0:props.selectedItems[props.all.id].qty}
+            <button onClick={()=>{buttonClick("+",props.all.id)}}>
                 +
             </button>
       </div>
@@ -29,5 +46,5 @@ const Card = (props) => {
   )
 }
 
-export default Card
+export default connect(mapStateToProps,mapDispatchToProps)(Card)
 

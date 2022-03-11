@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom'
 const NavBar = ({currentCart}) => {
   const count = (element)=>{
     let i =0
-    element.map(ele=>{
-      if(ele.qty!=0)
-      i++
-    })
     return i
   }
   return <div id="navBar">

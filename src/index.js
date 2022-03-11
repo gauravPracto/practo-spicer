@@ -6,7 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from "../src/store/storeConfig"
 import { Provider } from 'react-redux'
-import Payment from './components/Payment';
 import "./styles/root.scss"
 ReactDOM.render(
   <React.StrictMode>

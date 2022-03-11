@@ -1,21 +1,26 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import {fetchAll} from "../store/actions";
 import "../styles/cardContainer.scss"
 import Card from './Card'
-import NewLook from './NewLook';
-const CardContainer = () => {
-    const store = useSelector((element)=>element.allItem)
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        dispatch(fetchAll())
-    },[])
+import { connect} from 'react-redux'
+import {actions} from "../store/actionCreator"
+import {fetchAll} from "../store/actionTypes"
+
+const mapStateToProps = (state,ownProps)=>{
+return {
+  allItems:state.menu
+}
+}
+const mapDispatchToProps = (dispatch,ownProps)=>{
+  return {
+    getAll:()=>dispatch(actions(fetchAll))
+  }
+}
+const CardContainer = ({getAll,allItems}) => {
+  getAll()
+    const store = allItems
   return (
-    <div id="cardContainer">{store.map(ele=>{
-    {console.log(ele)}
-    return <Card all={ele} qty={ele.qty}></Card>})}</div>
+    <div id="cardContainer">{store.map(ele=>{ return <Card all={ele} qty={ele.qty}></Card>})}</div>
   )
 }
 
-export default CardContainer
+export default connect(mapStateToProps,mapDispatchToProps)(CardContainer)

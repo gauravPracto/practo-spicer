@@ -1,23 +1,28 @@
 import React from 'react'
+import { useEffect } from 'react';
 import "../styles/finalMessage.scss"
 import uniqid from 'uniqid';
-import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
-const FinalMessage = (props) => {
-  const dispatch = useDispatch()
-  const store = useSelector((element)=>element.allItem)
+import { connect, useSelector } from 'react-redux'
+import { Link , useNavigate} from 'react-router-dom';
+import { useState } from 'react';
+const mapStateToProps = (state,currentProps)=>{
+  return {selectedItems:state.selectedItems,allItems:state.menu,tag:currentProps.tag}
+}
+const FinalMessage = ({allItems,selectedItems,tag}) => {
+  const navigate = useNavigate()
+  const [store,setStore] = useState(allItems.filter(ele=>selectedItems[ele.id]!=undefined))
+    return tag=="true"?(
+      <div id="finalMessage">
+        <div id="success">SUCCESS</div>
+        <div id="uniId">Order Id : {uniqid()}</div>
+        {store.map(ele=><div>{ele.menuname}</div>)}<Link to="/"><button>Eat More</button></Link></div>
+    ):<div id="finalMessage">
+    <div id="success">UnSuccessfull</div>
+    <div id="uniId">Order Id : {uniqid()}</div>
+    {store.map(ele=>ele.qty!=0?<div>{ele.menuname}</div>:null)}
+    <Link to="/payment"><button>no Worry Back to payment Again</button></Link>
+    </div>
   
-  return props.tag=="true"?(
-    <div id="finalMessage">
-      <div id="success">SUCCESS</div>
-      <div id="uniId">Order Id : {uniqid()}</div>
-      {store.map(ele=>ele.qty!=0?<div>{ele.menuname}</div>:null)}</div>
-  ):<div id="finalMessage">
-  <div id="success">UnSuccessfull</div>
-  <div id="uniId">Order Id : {uniqid()}</div>
-  {store.map(ele=>ele.qty!=0?<div>{ele.menuname}</div>:null)}
-  <Link to="/payment"><button>no Worry Back to payment Again</button></Link>
-  </div>
 }
 
-export default FinalMessage
+export default connect(mapStateToProps)(FinalMessage)
