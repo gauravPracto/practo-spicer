@@ -22,11 +22,11 @@ const calculate = (selectedItem,allItems,discount,setDiscount)=>{
      })
      const answer = veg+nonVeg
      if(discount=="all")
-        return answer-(answer*(25/100))
+        return [answer,answer-(answer*(25/100))]
     else if(discount=="nonVeg")
-        return answer - (nonVeg*(50/100))
+        return [answer,answer - (nonVeg*(50/100))]
     else
-        return answer
+        return [answer,answer]
 }
 
 export default calculate;

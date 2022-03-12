@@ -19,16 +19,6 @@ all:currentProps.all}
       }
     
 const Payment = ({selectedItems,allItems,increment,decrement,all}) => {
-    const countNonZero = (store)=>{
-        let count = 0
-        Object.keys(store).map((ele)=>{
-            if(store[ele].qty!=0){
-                count++
-            }
-        })
-        return count
-    }
-
     const buttonClick = (op,id)=>{
         switch(op){
             case "+":
@@ -114,14 +104,23 @@ console.log(Object.keys(selectedItems).length,'kkjjjjjjj')
             </div>
         </div>
         <div className='left' id="couponAlertOuter">
-        <div id="couponAlert">{alertMessage}</div>
+            {discount!="none"?<div id="couponAlert">{alertMessage}</div>:<div id="couponAlert" style={{
+                backgroundColor:"#D2042D"
+            }}>{alertMessage}</div>}
         </div>
         <div className='left'>
         <button id="coupon-button" onClick={()=>applyCoupon()
                 }>APPLY COUPON</button>
         </div>
         <div className='left'>
-               <div className="box">{calculate(selectedItems,allItems,discount,setDiscount)}</div>
+            {console.log(calculate(selectedItems,allItems,discount,setDiscount)[1])}
+               <div className="box">{calculate(selectedItems,allItems,discount,setDiscount)[1]}</div>
+           </div>
+           <div className='left'>
+               <div className="box">Discount</div>
+           </div>
+           <div className='left'>
+               <div className="box">-{isNaN(calculate(selectedItems,allItems,discount,setDiscount)[0]-calculate(selectedItems,allItems,discount,setDiscount)[1])?0:calculate(selectedItems,allItems,discount,setDiscount)[0]-calculate(selectedItems,allItems,discount,setDiscount)[1]}</div>
            </div>
            <div className='left'><ModalCard setIsOpen={setIsOpen} isOpen={isOpen}></ModalCard></div>
         </div>
