@@ -54,10 +54,7 @@ const Payment = ({selectedItems,allItems,increment,decrement,all}) => {
     }
     // make utils
     // change to switch
-    
-
-console.log(Object.keys(selectedItems).length,'kkjjjjjjj')
-    return (
+        return (
         Object.keys(selectedItems).length==0?<FillPlate></FillPlate>:
         <div id="payment">
         <div id="left-payment">
