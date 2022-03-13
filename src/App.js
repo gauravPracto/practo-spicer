@@ -1,12 +1,12 @@
 import './App.css';
 import Root from './components/Root';
-import Payment from './components/Payment';
-import PaymentForm from "./components/CreditCard"
+import Payment from './components/paymentManager/Payment';
+import PaymentForm from "./components/paymentManager/CreditCard"
 import {
   Routes,
   Route,
 } from "react-router-dom";
-import FinalMessage from './components/FinalMessage';
+import FinalMessage from './components/Bill/FinalMessage';
 
 function App() {
   return (

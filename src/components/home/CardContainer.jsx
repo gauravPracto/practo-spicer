@@ -1,9 +1,9 @@
 import React from 'react'
-import "../styles/cardContainer.scss"
+import "../../styles/cardContainer.scss"
 import Card from './Card'
 import { connect} from 'react-redux'
-import {actions} from "../store/actionCreator"
-import {fetchAll} from "../store/actionTypes"
+import {actions} from "../../store/actionCreator"
+import {fetchAll} from "../../store/actionTypes"
 
 const mapStateToProps = (state,ownProps)=>{
 return {

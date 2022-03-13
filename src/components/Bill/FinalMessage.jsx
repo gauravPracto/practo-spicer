@@ -1,15 +1,19 @@
 import React from 'react'
-import { useEffect } from 'react';
-import "../styles/finalMessage.scss"
+import "../../styles/finalMessage.scss"
 import uniqid from 'uniqid';
-import { connect, useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import { Link , useNavigate} from 'react-router-dom';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 const mapStateToProps = (state,currentProps)=>{
   return {selectedItems:state.selectedItems,allItems:state.menu,tag:currentProps.tag}
 }
 const FinalMessage = ({allItems,selectedItems,tag}) => {
   const navigate = useNavigate()
+  useEffect(() => {
+    if(Object.keys(selectedItems).length==0){
+      navigate("/")
+    }
+  }, []);
   const [store,setStore] = useState(allItems.filter(ele=>selectedItems[ele.id]!=undefined))
     return tag=="true"?(
       <div id="finalMessage">

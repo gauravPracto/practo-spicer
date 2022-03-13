@@ -1,6 +1,6 @@
   import React from 'react'
   import {Modal} from 'pretty-modal'
-  import "../styles/modal.scss"
+  import "../../styles/modal.scss"
   import { useState } from 'react'
   import { useNavigate } from 'react-router-dom'
   const ModalCard = ({setIsOpen,isOpen}) => {

@@ -1,11 +1,12 @@
 import React from 'react'
-import { useSelector, useDispatch, connect } from 'react-redux'
-import "../styles/payment.scss"
-import {useState,useEffect} from 'react'
-import { actions } from '../store/actionCreator'
+import {connect } from 'react-redux'
+import coupons from '../../utils/coupon'
+import "../../styles/payment.scss"
+import {useState} from 'react'
+import { actions } from '../../store/actionCreator'
 import ModalCard from './CreditCard'
 import FillPlate from './FillPlate'
-import calculate from '../utils/calculator'
+import calculate from '../../utils/calculator'
 const mapStateToProps = (state,currentProps)=>{
     return {selectedItems:state.selectedItems,
     allItems:state.menu,
@@ -29,28 +30,28 @@ const Payment = ({selectedItems,allItems,increment,decrement,all}) => {
         }
     }
 
+    const makeFlex = ()=>{
+        document.getElementById("couponAlertOuter").style.display="flex"
+    }
     const [isOpen, setIsOpen] = useState(false)
     const [alertMessage , setAlertMessage] = useState("")
     const [discount,setDiscount] = useState("none")
     const [store,setStore] = useState(allItems.filter(ele=>selectedItems[ele.id]!=undefined))
+    const [couponFeild , setCouponFeild] = useState("")
     const applyCoupon = ()=>{
-        const value = document.getElementById("coupon-feild").value
-        if(value.toUpperCase()=="ALL2022")
-        {setDiscount("all")
-            document.getElementById("couponAlertOuter").style.display="flex"
-            setAlertMessage("Coupon Added")
-    }
-        else if(value.toUpperCase()=="NOVEGAN2022")
-        {   document.getElementById("couponAlertOuter").style.display="flex"
-            setDiscount("nonVeg")
-            setAlertMessage("Coupon Added")
-}else
-        {   document.getElementById("couponAlertOuter").style.display="flex"//replace this
-            setDiscount("none")
-            setAlertMessage("Not a Valid Coupon")
-
-        }
-        document.getElementById("coupon-feild").value=value.toUpperCase()//replace this
+        const inputCoupon = coupons()[couponFeild.toUpperCase()]
+        switch(inputCoupon){
+            case undefined:
+                makeFlex()
+                setDiscount("none")
+                setAlertMessage("Invalid Coupon Added")
+                break
+            default:
+                makeFlex()
+                setDiscount(inputCoupon.appliedOn)
+                setAlertMessage("Coupon Added")
+            }
+        //replace this
     }
     // make utils
     // change to switch
@@ -96,7 +97,10 @@ const Payment = ({selectedItems,allItems,increment,decrement,all}) => {
         <div className='left special'>
             <div id="coupon">
                 <label htmlFor="coupon-feild">COUPON </label>
-                <input type="text" name="coupon-feild" id="coupon-feild" />
+                {console.log(couponFeild)}
+                <input onChange={(e)=>{
+                    console.log(e.target)
+                    setCouponFeild(e.target.value)}} value={couponFeild.toUpperCase()} type="text" name="coupon-feild" id="coupon-feild" />
                 &nbsp;
             </div>
         </div>

@@ -1,12 +1,11 @@
 import React from 'react'
-import NavBar from './NavBar'
+import NavBar from './home/NavBar'
 import { useSelector, useDispatch } from 'react-redux'
-import Banner from './Banner'
-import CardContainer from './CardContainer'
+import Banner from './home/Banner'
+import CardContainer from './home/CardContainer'
 import { connect} from 'react-redux'
 import {actions} from "../store/actionCreator"
 import {fetchAll} from "../store/actionTypes"
-import FillPlate from './FillPlate'
 const mapStateToProps = (state,ownProps)=>{
 return {
   allItems:state.menu

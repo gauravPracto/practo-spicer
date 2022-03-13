@@ -1,6 +1,6 @@
 import React from 'react'
-import "../styles/card.scss"
-import { actions } from '../store/actionCreator'
+import "../../styles/card.scss"
+import { actions } from "../../store/actionCreator"
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state,currentProps)=>{
