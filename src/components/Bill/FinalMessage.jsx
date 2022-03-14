@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Link , useNavigate} from 'react-router-dom';
 import { useState,useEffect } from 'react';
 const mapStateToProps = (state,currentProps)=>{
-  return {selectedItems:state.selectedItems,allItems:state.menu,tag:currentProps.tag}
+  return {selectedItems:state.spicerReducer.selectedItems,allItems:state.menu.menu,tag:currentProps.tag}
 }
 const FinalMessage = ({allItems,selectedItems,tag}) => {
   const navigate = useNavigate()

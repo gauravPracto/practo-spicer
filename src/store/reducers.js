@@ -1,6 +1,5 @@
 import store from "../dataStore.json"
-export const spicerReducer = (initialState={menu:[],selectedItems:{}},action)=>{
-    console.log(action.type)
+export const spicerReducer = (initialState={selectedItems:{}},action)=>{
     switch(action.type){
         case "inc":
             return {
@@ -24,13 +23,19 @@ export const spicerReducer = (initialState={menu:[],selectedItems:{}},action)=>{
                 delete temp.selectedItems[ele]
             } })
             return temp
-        case "fetchAll":
-            return {
-                ...initialState,
-                menu:store
-            }
         default:
             return initialState;
     }
 }
 
+
+
+export const menu = (initialState={menu:[]},action)=>{
+    switch(action.type){
+        case "fetchAll":
+            return {menu:store}
+        default:
+            return initialState
+    }
+
+}

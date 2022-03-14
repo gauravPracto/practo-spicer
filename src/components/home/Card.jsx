@@ -2,19 +2,20 @@ import React from 'react'
 import "../../styles/card.scss"
 import { actions } from "../../store/actionCreator"
 import { connect } from 'react-redux'
-
+import { incrementQty,decrementQty } from '../../store/actionTypes'
 const mapStateToProps = (state,currentProps)=>{
-  return {selectedItems:state.selectedItems}
+  return {selectedItems:state.spicerReducer.selectedItems}
 }
 const mapDispatchToProps = (dispatch,currentProps)=>{
   return {
-    increment:(id)=>{dispatch(actions("inc",{id:id}))},
-    decrement:(id)=>{dispatch(actions("desc",{id:id}))}
+    increment:(id)=>{dispatch(actions(incrementQty,{id:id}))},
+    decrement:(id)=>{dispatch(actions(decrementQty,{id:id}))}
   }
 }
 const Card = (props) => {
+
+  
   const buttonClick = (op,id)=>{
-    console.log(op,id)
     switch(op){
       case "+":
         props.increment(id)

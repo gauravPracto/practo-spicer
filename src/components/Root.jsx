@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './home/NavBar'
-import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 import Banner from './home/Banner'
 import CardContainer from './home/CardContainer'
 import { connect} from 'react-redux'
@@ -17,7 +17,9 @@ const mapDispatchToProps = (dispatch,ownProps)=>{
   }
 }
 const Root = (props) => {
-  props.getAll()
+  useEffect(() => {
+    props.getAll()
+  }, []);
   const selectedItems = props.allItems
   return (
     <div id="outsideRoot">

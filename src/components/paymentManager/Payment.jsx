@@ -7,19 +7,26 @@ import { actions } from '../../store/actionCreator'
 import ModalCard from './CreditCard'
 import FillPlate from './FillPlate'
 import calculate from '../../utils/calculator'
+import { decrementQty,incrementQty } from '../../store/actionTypes'
+
+
+
 const mapStateToProps = (state,currentProps)=>{
-    return {selectedItems:state.selectedItems,
-    allItems:state.menu,
+    console.log(state)
+    return {selectedItems:state.spicerReducer.selectedItems,
+    allItems:state.menu.menu,
 all:currentProps.all}
   }
    const mapDispatchToProps = (dispatch,currentProps)=>{
+       
         return {
-          increment:(id)=>{dispatch(actions("inc",{id:id}))},
-          decrement:(id)=>{dispatch(actions("desc",{id:id}))}
+          increment:(id)=>{dispatch(actions(incrementQty,{id:id}))},
+          decrement:(id)=>{dispatch(actions(decrementQty,{id:id}))}
         }
       }
     
 const Payment = ({selectedItems,allItems,increment,decrement,all}) => {
+    {console.log(allItems)}
     const buttonClick = (op,id)=>{
         switch(op){
             case "+":

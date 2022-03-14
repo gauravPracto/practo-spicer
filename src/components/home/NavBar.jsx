@@ -6,7 +6,7 @@ import {connect} from "react-redux"
 import { Link } from 'react-router-dom'
 const mapStateToProps = (state)=>{
   return {
-    selectedItems:state.selectedItems
+    selectedItems:state.spicerReducer.selectedItems
   }
 }
 const NavBar = (props) => {

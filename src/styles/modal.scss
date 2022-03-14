@@ -11,7 +11,7 @@
 #modalDiv{
     box-sizing: border-box;
     width: 300px;
-    height: 400px;
+    height: 500px;
     padding:10px;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
 #modalClose{
     position: relative;
     left:250px;
-    bottom:400px;
+    bottom:500px;
     background-color: #D2042D;
     border: none;
     color: white;

@@ -1,7 +1,7 @@
-import { createStore} from 'redux';
-import {spicerReducer} from "./reducers"
+import { createStore,combineReducers} from 'redux';
+import {spicerReducer,menu} from "./reducers"
 const store = createStore(
-    spicerReducer,
+    combineReducers({spicerReducer,menu}    ),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 
