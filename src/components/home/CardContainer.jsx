@@ -21,7 +21,6 @@ const CardContainer = ({getAll,allItems}) => {
     getAll()
   }, []);
     const store = allItems
-    console.log(store)
   return (
     <div id="cardContainer">{store.map(ele=>{ return <Card all={ele} qty={ele.qty}></Card>})}</div>
   )

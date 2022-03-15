@@ -12,7 +12,6 @@ import { decrementQty,incrementQty } from '../../store/actionTypes'
 
 
 const mapStateToProps = (state,currentProps)=>{
-    console.log(state)
     return {selectedItems:state.spicerReducer.selectedItems,
     allItems:state.menu.menu,
 all:currentProps.all}
@@ -25,8 +24,7 @@ all:currentProps.all}
         }
       }
     
-const Payment = ({selectedItems,allItems,increment,decrement,all}) => {
-    {console.log(allItems)}
+const Payment = ({selectedItems,allItems,increment,decrement}) => {
     const buttonClick = (op,id)=>{
         switch(op){
             case "+":

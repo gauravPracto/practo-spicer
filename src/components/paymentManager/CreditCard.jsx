@@ -11,7 +11,6 @@
     const [cardDate , setCardDate] = useState("")
     let navigate = useNavigate();
     const creditCheck = ()=>{
-      console.log(cardName,cardNumber,cardDate,CVV)
       const validate = validation(cardDate,cardName,cardNumber,CVV)
       if(validate=="yes")
       navigate("/success")
@@ -38,7 +37,6 @@
               <span>CARD INFORMATION</span>
               <br></br>
               <div className="cardInnerDiv">Card Holder Name</div>
-              {console.log(cardNumber,"number")}
               <div className="cardInnerDiv"><input onChange={(event)=>{setCardName(event.target.value)}} className="cardInput" type="text" name="cardName" id="cardName" /></div>
               <span className="alertSpan" id="cardNameAlert"></span>
               <div className="cardInnerDiv">Card Holder Number</div>
