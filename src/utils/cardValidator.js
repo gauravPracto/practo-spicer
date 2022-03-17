@@ -6,7 +6,7 @@ const validation = (cardDate,cardName,cardNumber,CVV)=>{
     cardNumber = cardNumber||""
     CVV = CVV||""
     console.log(cardName,"card Number")
-    if(!(cardName!="" || /^[a-zA-Z]+( )[a-zA-Z]+$/.test(cardName))){
+    if(cardName=="" || /^[a-zA-Z]+(\s?)+[a-zA-Z]+$/.test(cardName)==false){
       const cardNameAlert = document.getElementById("cardNameAlert")
       cardNameAlert.innerHTML = "Please Enter Card Name " 
     }
@@ -43,11 +43,7 @@ const validation = (cardDate,cardName,cardNumber,CVV)=>{
       cardCvvAlert.innerHTML = "" 
     }
     if(check==4){
-      const answer =  window.confirm("successful or Unsuccessful")
-      if(answer)
         return "yes"
-      else
-      return "no"
     }
 
 
